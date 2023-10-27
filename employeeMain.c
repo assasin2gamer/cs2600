@@ -14,6 +14,20 @@ int main(void){
     extern const int EmployeeTableEntries;     
 
     PtrToEmployee matchPtr;  //Declaration
+    
+    //Example not found
+    matchPtr = searchEmployeeByNumber(EmployeeTable, EmployeeTableEntries, 1045);
+    if (matchPtr != NULL)
+        printf("Employee ID 1045 is in record %d\n", matchPtr - EmployeeTable);
+    else
+        printf("Employee ID is NOT found in the record\n");
+
+    //Example found
+    matchPtr = searchEmployeeByName(EmployeeTable, EmployeeTableEntries, "Tony Bobcat");
+    if (matchPtr != NULL)
+        printf("Employee Tony Bobcat is in record %d\n", matchPtr - EmployeeTable);
+    else
+        printf("Employee Tony Bobcat is NOT found in the record\n");
 
     
     //Success
@@ -31,7 +45,7 @@ int main(void){
     else
         printf("Phone %s is not in record \n", phone_fail);
     //Success
-    double salary = 8.78;
+    double salary  = 8.78;
     matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, salary);
     if (matchPtr != NULL){
         printf("Salary %f ", salary);
@@ -40,15 +54,17 @@ int main(void){
     else
         printf("Employee Tony Bobcat is NOT found in the record\n");
     //Fail
-    salary = 9.78;
-    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, salary);
+    double salary_fail = 9.78;
+    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, salary_fail);
     if (matchPtr != NULL){
-        printf("Salary %f ", salary);
+        printf("Salary %f ", salary_fail);
         printf(" is in record %d\n", matchPtr - EmployeeTable);
     }
-    else
-        printf("Salary %f ", salary);
+    else{
+        printf("Salary %f ", salary_fail);
         printf(" is not in record\n");
+    }
+
         
     
     return EXIT_SUCCESS;

@@ -16,8 +16,8 @@ extern const int EmployeeTableEntries;
 PtrToEmployee searchEmployeeByNumber(const Employee table[], int sizeTable, long numberToFind);
 PtrToEmployee searchEmployeeByName(const Employee table[], int sizeTable, char * targetName);
 
-PtrToEmployee searchEmployeeByPhone(const Employee table[], int sizeTable, char * numberToFind);
-PtrToEmployee searchEmployeeBySalary(const Employee table[], int sizeTable, double numberToFind);
+PtrToEmployee searchEmployeeByPhone(const Employee table[], int sizeTable, char * targetName);
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int size, double targetSalary);
 
 
 #endif // EMPLOYEE_H
